@@ -1,0 +1,77 @@
+.mainBody {
+  height: 100vh;
+
+  background: url(../public/img/pexels-ds-stories-7256082.jpg) no-repeat
+    center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.secondBody {
+  width: 100vw;
+  height: calc(100vh - 50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 1.5rem;
+}
+
+.secondBody > p {
+  display: flex;
+  gap: 1.4rem;
+  font-size: 4rem;
+}
+
+.tx1 {
+  color: #a74230;
+}
+
+.tx2 {
+  color: #c83c3e;
+}
+
+.tx3 {
+  color: #cb5e5d;
+}
+
+.shopBtn {
+  background: var(--primary-color);
+  border: 1px solid #ff4742;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 40px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  text-decoration: none;
+}
+
+.shopBtn:hover,
+.shopBtn:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: var(--primary-color);
+}
+
+.shopBtn:active {
+  opacity: 0.5;
+}
