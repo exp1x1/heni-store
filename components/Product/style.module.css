@@ -1,0 +1,63 @@
+.mainBox {
+  padding: 1rem;
+  max-width: 340px;
+  /* height: 300px; */
+
+  background-color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex: 1;
+
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+
+  border-radius: 0.7rem;
+}
+
+.mainImg {
+}
+
+.mainTitle {
+  text-align: center;
+}
+
+.mainBtn {
+  background: var(--primary-color);
+  border: 1px solid #ff4742;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 40px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  text-decoration: none;
+}
+
+.mainBtn:hover,
+.mainBtn:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: var(--primary-color);
+}
+
+.mainBtn:active {
+  opacity: 0.5;
+}

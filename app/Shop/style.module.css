@@ -1,0 +1,27 @@
+.mainContainer {
+  background-color: var(--background-color);
+}
+
+.productContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+
+  margin: 0 12.4rem 0 12.4rem;
+}
+
+@media (max-width: 1480px) {
+  .productContainer {
+    margin: 0 6.4rem 0 6.4rem;
+  }
+}
+
+@media (max-width: 1250px) {
+  .productContainer {
+    margin: 0 3.4rem 0 3.4rem;
+    grid-template-columns: repeat(auto-fill, 340px);
+
+    justify-content: center;
+  }
+}
