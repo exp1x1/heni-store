@@ -15,10 +15,13 @@ export interface product {
 
 export interface productProp {
   productInfo: product;
-  // didBuy: Boolean;
   addProductEventHandler: Function;
   removeProductEventHandler: Function;
   didBuy?: Boolean;
+}
+
+export interface CartProductProp {
+  productInfo: product;
 }
 
 export type productArray = product[];

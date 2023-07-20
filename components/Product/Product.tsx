@@ -26,9 +26,8 @@ function Product(props: productProp) {
 
       {props.didBuy ? (
         <button
-          className={Style.mainBtn}
+          className={Style.mainRemoveBtn}
           onClick={() => {
-            // eventHandler();
             props.removeProductEventHandler(id);
           }}
         >
@@ -36,16 +35,14 @@ function Product(props: productProp) {
         </button>
       ) : (
         <button
-          className={Style.mainBtn}
+          className={Style.mainAddBtn}
           onClick={() => {
-            // eventHandler();
             props.addProductEventHandler(id);
           }}
         >
           add to cart
         </button>
       )}
-      {/* <button onClick={() => eventHandler()}>click me</button> */}
     </div>
   );
 }

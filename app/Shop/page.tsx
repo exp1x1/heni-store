@@ -6,7 +6,7 @@ import NavBar from "../../components/NavBar/NavBar";
 import Product from "@/components/Product/Product";
 import { product, productArray } from "@/types";
 
-import { useState, useEffect, ReactElement, StrictMode } from "react";
+import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 export default function Shop() {
@@ -14,10 +14,6 @@ export default function Shop() {
   const [orderItem, setOrderItem] = useState<productArray>([]);
 
   useEffect(() => {
-    // if (localStorage.getItem("orderItem") === null) {
-    //   localStorage.setItem("orderItem", JSON.stringify(orderItem));
-    // }
-
     fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
 
@@ -33,12 +29,19 @@ export default function Shop() {
           localStorage.setItem("shopItem", JSON.stringify(shopItems));
         }
       });
+
+    if (localStorage.getItem("orderItem") !== null) {
+      const data = localStorage.getItem("orderItem")!;
+      const objData = JSON.parse(data);
+
+      setOrderItem(objData);
+    }
   }, []);
 
   useEffect(() => {
     localStorage.setItem("orderItem", JSON.stringify(orderItem));
-    console.log(orderItem);
-    // return () => {};
+
+    // console.log(JSON.parse(localStorage.getItem("orderItem")));
   }, [orderItem]);
 
   const addProductToCart = (productNumber: number) => {
@@ -57,14 +60,6 @@ export default function Shop() {
   };
 
   const removeProductToCart = (productNumber: number) => {
-    // console.log(orderItem);
-    // const orders = orderItem;
-
-    // const index = orders.findIndex((item) => item.id === productNumber);
-    // orders.splice(index, 1);
-    // console.log(orders);
-    // setOrderItem(orders);
-
     const currOrder = orderItem.filter(
       (item) => item.id !== productNumber
     );
@@ -86,25 +81,22 @@ export default function Shop() {
   return (
     <div className={Style.mainContainer}>
       <NavBar />
-      {/* <button onClick={() => console.log(shopItems)}>click me </button> */}
 
-      <StrictMode>
-        <div className={Style.productContainer}>
-          {shopItems.map((item: product) => {
-            const buyState = checkDidBuy(item.id);
-            console.log(buyState);
-            return (
-              <Product
-                key={uuidv4()}
-                productInfo={item}
-                addProductEventHandler={addProductToCart}
-                removeProductEventHandler={removeProductToCart}
-                didBuy={buyState}
-              />
-            );
-          })}
-        </div>
-      </StrictMode>
+      <div className={Style.productContainer}>
+        {shopItems.map((item: product) => {
+          const buyState = checkDidBuy(item.id);
+
+          return (
+            <Product
+              key={uuidv4()}
+              productInfo={item}
+              addProductEventHandler={addProductToCart}
+              removeProductEventHandler={removeProductToCart}
+              didBuy={buyState}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 }

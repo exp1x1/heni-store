@@ -1,0 +1,91 @@
+.mainContainer {
+  background-color: var(--background-color);
+  min-height: 100vh;
+}
+
+.secondContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.productContainer {
+  display: flex;
+  flex-direction: column;
+
+  width: fit-content;
+  gap: 1rem;
+  /* min-width: 450px; */
+}
+
+.summaryContainer,
+.summary {
+  display: flex;
+  flex-direction: column;
+}
+
+.summaryContainer {
+  background-color: #fff;
+  padding: 1rem;
+
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 5px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 3px -1px;
+
+  border-radius: 0.6rem;
+  gap: 1rem;
+}
+
+.summary {
+  gap: 0.4rem;
+  min-width: 450px;
+}
+
+.summary > * {
+  display: flex;
+  justify-content: space-between;
+}
+
+.itemInfo {
+}
+
+.priceInfo {
+}
+
+.mainBtn {
+  background: var(--primary-color);
+  border: 1px solid #ff4742;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 40px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  text-decoration: none;
+}
+
+.mainBtn:hover,
+.mainBtn:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: var(--primary-color);
+}
+
+.mainBtn:active {
+  opacity: 0.5;
+}
