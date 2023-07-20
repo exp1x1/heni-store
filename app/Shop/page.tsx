@@ -14,7 +14,7 @@ export default function Shop() {
   const [orderItem, setOrderItem] = useState<productArray>([]);
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
+    fetch("https://fakestoreapi.com/products", { mode: "cors" })
       .then((res) => res.json())
 
       .then((json) => {
