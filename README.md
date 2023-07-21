@@ -1,4 +1,5 @@
 # Henicos
+Live: https://henicos.vercel.app
 
 Henicos is an e-commerce store made for learning new tech.
 
